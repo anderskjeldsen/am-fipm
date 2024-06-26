@@ -1,0 +1,31 @@
+
+namespace Am.Fipm {
+    native class SqrtTable() {
+        import Am.Lang
+
+        private var size: UInt
+        private var table: UInt[]
+
+        public static fun newSqrtTable(var size: UInt) : SqrtTable {
+            var table = new SqrtTable()
+            table.size = size
+            table.table = new UInt[size]
+            table.initTable(table.table, size)
+            return table
+        }
+
+        private native fun initTable(var table: UInt[], var size: UInt)
+
+        public fun getSqrt(var sqr: UInt): UInt {
+            if (sqr < 0) {
+                throw new Exception("Square must be positive")
+            }
+
+            if (sqr >= this.size) {
+                throw new Exception("Square must be less than " + this.size.toString())
+            }
+
+            return this.table[sqr]
+        }
+    }
+}

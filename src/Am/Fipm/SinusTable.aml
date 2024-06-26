@@ -1,0 +1,46 @@
+
+namespace Am.Fipm {
+
+    class Startup() {
+        import Am.Lang
+        public static fun main() {
+            var sqrtTable = SqrtTable.newSqrtTable(123457UI)
+            var sqrt100 = sqrtTable.getSqrt(100UI)
+            ("Sqrt of 100 is " + (sqrt100 >> 16).toString()).println()
+//            var num = 10000UI
+            var num = 123456UI
+            var sqrtNum = sqrtTable.getSqrt(num)
+//            var sqrt1000 = sqrtTable.getSqrt(1034324UI)
+            ("Sqrt of " + num.toString() + " is " + (sqrtNum >> 16).toString()).println()
+        }
+    }
+
+    native class SinusTable() {
+        import Am.Lang
+
+        private var size: Int
+        private var table: Int[]
+
+        public static fun newSinusTable(var size: Int) : SinusTable {
+            var table = new SinusTable()
+            table.size = size
+            table.table = new Int[size]
+            table.initTable(table.table, size)
+            return table
+        }
+
+        private native fun initTable(var table: Int[], var size: Int)
+
+        public fun getSinus(var angle: Int): Int {
+            if (angle < 0) {
+                throw new Exception("Angle must be positive")
+            }
+
+            if (angle >= this.size) {
+                throw new Exception("Angle must be less than " + this.size.toString())
+            }
+
+            return this.table[angle]
+        }
+    }
+}

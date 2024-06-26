@@ -1,0 +1,50 @@
+
+# FIxed Point Maths
+id: am-fipm
+version: 1.0.0
+type: library
+dependencies:
+  - id: am-lang-core
+    realm: github
+    type: git-repo
+    tag: latest
+    branch: master
+    url: https://github.com/anderskjeldsen/am-lang-core.git
+platforms:
+  - id: libc
+    abstract: true
+  - id: amigaos
+    extends: libc
+    gccCommand: m68k-amigaos-gcc
+    asmCommand: vasmm68k_mot
+    gccAdditionalLibraries:
+    additionalHeaders:
+    additionalAsmSources:
+    additionalCSources:
+    additionalIncludePaths:
+    gccAdditionalOptions:
+    gccLibraryPaths:
+  - id: macos-arm
+    extends: libc
+    gccCommand: gcc
+    gccAdditionalLibraries:
+    additionalHeaders:
+    additionalAsmSources:
+    additionalCSources:
+    additionalIncludePaths:
+    gccLibraryPaths:
+buildTargets:
+  - id: amigaos_docker
+    platform: amigaos
+    dockerBuild:
+      image: kjeldsenanders/dnf-dev:initial-x86
+      buildPath: /host
+  - id: amigaos_docker_arm
+    platform: amigaos
+    dockerBuild:
+      image: kjeldsenanders/dnf-dev:initial
+      buildPath: /host
+  - id: macos-arm
+    platform: macos-arm
+    commands:
+      - make -f macos-arm.Makefile all
