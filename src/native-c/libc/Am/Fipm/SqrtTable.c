@@ -196,48 +196,6 @@ function_result Am_Fipm_SqrtTable_initTable_0(aobject * const this, aobject * ta
 		values[i] = sqrt_100(i);
 	}
 
-
-/*
-function sqrtTable(numbers) {
-  var tab = {};
-  var values = [];
-  for(var i = 0; i < numbers; i++) {
-    values.push(Math.sqrt(i));
-  }
-  
-  tab.values = values;
-  tab.sqrt = function(n) {
-    var r = 0;
-    var nn = n;
-    var m = 1;
-    if (nn > 100) {
-      while(nn > 100) {
-        var nn = nn / 100;
-        r++;
-      }
-    } else if (nn < 1) {
-      while(nn < 1 && nn > 0) {
-        var nn = n * Math.pow(100, -r);
-        r--;
-      }
-    }
-    nn = Math.floor(nn);
-    var next = (nn + 1) * 100 ^ r;
-    var delta = next - n;
-    var max = next - (nn) * 100 ^ r;
-    var ratio = delta / max;
-    var sqrtn = values[nn];
-    if (ratio < 1 && ratio > 0) {
-      var diff = values[nn + 1] - sqrtn;
-      return (sqrtn + (diff * ratio)) * Math.pow(10, r);
-    }
-    return sqrtn * Math.pow(10, r);   
-  }
-  return tab;
-}
-*/
-
-	// TODO: implement native function Am_Fipm_SqrtTable_initTable_0
 __exit: ;
 	if (this != NULL) {
 		__decrease_reference_count(this);

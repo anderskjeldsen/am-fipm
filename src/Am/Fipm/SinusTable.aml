@@ -3,7 +3,7 @@ namespace Am.Fipm {
 
     class Startup() {
         import Am.Lang
-        public static fun main() {
+        public static fun main2() {
             var sqrtTable = SqrtTable.newSqrtTable(123457UI)
             var sqrt100 = sqrtTable.getSqrt(100UI)
             ("Sqrt of 100 is " + (sqrt100 >> 16).toString()).println()
