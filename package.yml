@@ -43,6 +43,15 @@ platforms:
     additionalCSources:
     additionalIncludePaths:
     gccLibraryPaths:
+  - id: macos
+    extends: libc
+    gccCommand: gcc
+    gccAdditionalLibraries:
+    additionalHeaders:
+    additionalAsmSources:
+    additionalCSources:
+    additionalIncludePaths:
+    gccLibraryPaths:
 buildTargets:
   - id: amigaos_docker
     platform: amigaos
