@@ -13,6 +13,16 @@ dependencies:
 platforms:
   - id: libc
     abstract: true
+  - id: linux-x64
+    extends: libc
+    gccCommand: gcc
+    gccAdditionalLibraries:
+    additionalHeaders:
+    additionalAsmSources:
+    additionalCSources:
+    additionalIncludePaths:
+    gccAdditionalOptions:
+    gccLibraryPaths:
   - id: amigaos
     extends: libc
     gccCommand: m68k-amigaos-gcc
@@ -33,7 +43,7 @@ platforms:
     additionalCSources:
     additionalIncludePaths:
     gccLibraryPaths:
-  - id: linux-x64
+  - id: macos
     extends: libc
     gccCommand: gcc
     gccAdditionalLibraries:
