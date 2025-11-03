@@ -33,6 +33,15 @@ platforms:
     additionalCSources:
     additionalIncludePaths:
     gccLibraryPaths:
+  - id: linux-x64
+    extends: libc
+    gccCommand: gcc
+    gccAdditionalLibraries:
+    additionalHeaders:
+    additionalAsmSources:
+    additionalCSources:
+    additionalIncludePaths:
+    gccLibraryPaths:
 buildTargets:
   - id: amigaos_docker
     platform: amigaos
@@ -46,5 +55,5 @@ buildTargets:
       buildPath: /host
   - id: macos-arm
     platform: macos-arm
-    commands:
-      - make -f macos-arm.Makefile all
+  - id: linux-x64
+    platform: linux-x64
