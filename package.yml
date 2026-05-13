@@ -8,7 +8,7 @@ dependencies:
     realm: github
     type: git-repo
     tag: latest
-    branch: master
+#    branch: master
     url: https://github.com/anderskjeldsen/am-lang-core.git
 platforms:
   - id: libc
