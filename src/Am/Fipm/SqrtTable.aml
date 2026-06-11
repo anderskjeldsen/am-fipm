@@ -4,7 +4,7 @@ namespace Am.Fipm {
         import Am.Lang
 
         private var size: UInt
-        private var table: UInt[]
+        private var table: UInt[]? = null
 
         public static fun newSqrtTable(var size: UInt) : SqrtTable {
             var table = new SqrtTable()

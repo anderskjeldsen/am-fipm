@@ -19,7 +19,7 @@ namespace Am.Fipm {
         import Am.Lang
 
         private var size: Int
-        private var table: Int[]
+        private var table: Int[]? = null
 
         public static fun newSinusTable(var size: Int) : SinusTable {
             var table = new SinusTable()
