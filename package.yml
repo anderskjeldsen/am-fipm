@@ -16,6 +16,11 @@ platforms:
   - id: linux-x64
     extends: libc
     gccCommand: gcc
+  - id: linux-ppc32
+    extends: libc
+    gccCommand: powerpc-linux-gnu-gcc -O1
+    gccAdditionalOptions:
+      - -pthread
     gccAdditionalLibraries:
     additionalHeaders:
     additionalAsmSources:
